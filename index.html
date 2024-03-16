@@ -203,30 +203,12 @@
         Your message, encrypted and authenticated so that nobody can read it
         or change it without your password.
       </div>
+            
       <p><button id="shareB">Share Encripted</button></p>
 <p id="shareResult"></p>
-
-
-
+            
     </div>
   </form>
-  <script>
-  const btn = document.getElementById('shareB');
-const resultPara = document.getElementById('shareResult');
-
-// Share must be triggered by "user activation"
-btn.addEventListener("click", async () => {
-const shareData = Object(document.getElementById('ciphertext').value); 
-  try {
-    await navigator.share(shareData);
-    resultPara.textContent = "Encrypted data shared successfully";
-  } catch (err) {
-    resultPara.textContent = `Error: ${err}`;
-  }
-});
-
-
-</script>
-
+   <script type="text/javascript" src="share.js"></script>
 </body>
 </html>
