@@ -17,3 +17,14 @@ const shareData = {
     resultPara.textContent = `Error: ${err}`;
   }
 });
+
+//input text file and entering it in plaintext
+const fileInput = document.querySelector("input[type=file]");
+  
+  fileInput.addEventListener("change", async () => {
+    const [file] = fileInput.files;
+  
+    if (file) {
+        document.getElementById('plaintext').innerText = await file.text();
+    }
+  });
